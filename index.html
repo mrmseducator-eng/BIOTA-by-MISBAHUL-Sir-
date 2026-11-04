@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<title>PAPER PRO by MISBAHUL SAKLINE</title>
+<style>
+:root{--navy:#102b46;--green:#13845b;--bg:#f3f6f8;--ink:#172331;--muted:#647386;--line:#dce4ea}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
+.top{background:linear-gradient(120deg,#102b46,#174d59);color:white;padding:22px max(18px,calc((100% - 1150px)/2))}
+.top h1{margin:0;font-size:clamp(22px,4vw,32px);letter-spacing:.4px}
+.top p{margin:4px 0 0;color:#d4e7e8}
+.wrap{max-width:1150px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:18px}
+.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px #17334b0a}
+.panel h2{font-size:18px;margin:0 0 14px;color:var(--navy)}
+label{display:block;font-weight:650;font-size:13px;margin:10px 0 5px}
+input,select,textarea{width:100%;padding:10px 11px;border:1px solid #cbd6df;border-radius:8px;font:inherit;background:white;color:var(--ink)}
+textarea{min-height:78px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.btn{border:0;border-radius:8px;padding:10px 13px;font-weight:700;cursor:pointer;background:var(--green);color:white}
+.btn.secondary{background:#e8eef2;color:var(--navy)}
+.btn.dark{background:var(--navy)}
+.btn.danger{background:#a33b3b}
+.hint{font-size:12px;color:var(--muted);margin-top:6px}
+.stats{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 14px}
+.pill{background:#edf4f1;color:#176448;padding:5px 10px;border-radius:30px;font-size:12px;font-weight:700}
+.qitem{border:1px solid var(--line);border-radius:10px;padding:12px;margin:9px 0}
+.qhead{display:flex;justify-content:space-between;gap:10px}
+.qitem p{margin:7px 0;white-space:pre-wrap}
+.small{font-size:12px;color:var(--muted)}
+.empty{padding:30px 12px;text-align:center;color:var(--muted);border:1px dashed #bdcbd5;border-radius:10px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.paper{background:white;color:#111;padding:26px;border:1px solid var(--line);border-radius:10px;min-height:280px}
+.paper h2,.paper h3{text-align:center;margin:3px}
+.paper .meta{text-align:center;font-size:13px;margin:7px 0 15px}
+.paper .qrow{margin:13px 0;break-inside:avoid}
+.paper .marks{float:right}
+.paper .opts{margin:5px 0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:2px 15px}
+.paper .ans{font-size:13px;color:#333;margin:4px 0 0 20px}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
+.tab{background:#e9eff3;color:var(--navy);border:0;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}
+.tab.active{background:var(--navy);color:white}
+.hidden{display:none!important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:12px 10px 28px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}.top{padding:18px}.paper{padding:17px}}
+@media print{
+body{background:white}
+.top,.left,.toolbar,.tabs,.no-print,footer{display:none!important}
+.wrap{display:block;margin:0;padding:0;max-width:none}
+.panel{border:0;box-shadow:none;padding:0}
+.paper{border:0;border-radius:0;padding:0;min-height:0}
+.right>.panel>h2,.stats{display:none!important}
+.paper .qrow{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+<h1>📘 PAPER PRO</h1>
+<p>by MISBAHUL SAKLINE · Smart Question Paper Maker</p>
+</header>
+
+<main class="wrap">
+
+<section class="panel left">
+<h2>১. পরীক্ষার তথ্য / Exam Details</h2>
+
+<label>প্রতিষ্ঠান / School or Coaching Name</label>
+<input id="school" placeholder="যেমন: BIOTA – by MISBAHUL Sir">
+
+<div class="grid2">
+<div>
+<label>শ্রেণি / Class</label>
+<select id="cls">
+<option>Class 5</option><option>Class 6</option>
+<option>Class 7</option><option>Class 8</option>
+<option selected>Class 9</option><option>Class 10</option>
+<option>Class 11</option><option>Class 12</option>
+</select>
+</div>
+<div>
+<label>বোর্ড / Board</label>
+<select id="board">
+<option>WBBSE</option><option>WBCHSE</option>
+<option>CBSE</option><option>ICSE</option>
+<option>ISC</option><option>Other</option>
+</select>
+</div>
+</div>
+
+<div class="grid2">
+<div>
+<label>বিষয় / Subject</label>
+<input id="subject" placeholder="Biology">
+</div>
+<div>
+<label>ভাষা / Language</label>
+<select id="lang">
+<option>বাংলা</option><option>English</option>
+<option selected>বাংলা + English</option>
+</select>
+</div>
+</div>
+
+<label>পরীক্ষার নাম / Exam Title</label>
+<input id="exam" placeholder="যেমন: Unit Test – 1">
+
+<div class="grid2">
+<div>
+<label>সময় / Time</label>
+<input id="duration" placeholder="1 Hour 30 Minutes">
+</div>
+<div>
+<label>পূর্ণমান / Full Marks</label>
+<input id="fullmarks" type="number" min="0" placeholder="35">
+</div>
+</div>
+
+<label>শিক্ষকের নাম / Teacher</label>
+<input id="teacher" value="MISBAHUL SAKLINE">
+
+<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+
+<h2>২. প্রশ্ন যোগ করুন / Add Question</h2>
+
+<label>প্রশ্নের ধরন / Question Type</label>
+<select id="type" onchange="typeChanged()">
+<option value="MCQ">MCQ</option>
+<option value="VSA">Very Short Answer</option>
+<option value="SA">Short Answer</option>
+<option value="LA">Long Answer</option>
+<option value="TF">True / False</option>
+<option value="FB">Fill in the Blanks</option>
+<option value="MATCH">Match the Following</option>
+<option value="AR">Assertion–Reason</option>
+<option value="NUM">Numerical</option>
+<option value="DIAGRAM">Diagram-based</option>
+</select>
+
+<label>প্রশ্ন / Question</label>
+<textarea id="question" placeholder="এখানে প্রশ্ন লিখুন..."></textarea>
+
+<div id="optionsBox">
+<label>বিকল্প / Options</label>
+<div class="grid2">
+<input id="op1" placeholder="Option A">
+<input id="op2" placeholder="Option B">
+<input id="op3" placeholder="Option C">
+<input id="op4" placeholder="Option D">
+</div>
+</div>
+
+<div class="grid2">
+<div>
+<label>নম্বর / Marks</label>
+<input id="marks" type="number" min="0" step="0.5" value="1">
+</div>
+<div>
+<label>সঠিক উত্তর / Answer</label>
+<input id="answer" placeholder="A / উত্তর লিখুন">
+</div>
+</div>
+
+<label>ব্যাখ্যা (ঐচ্ছিক) / Explanation</label>
+<textarea id="explanation" placeholder="শিক্ষকের নোট বা ব্যাখ্যা..."></textarea>
+
+<div class="btns">
+<button class="btn" onclick="addQuestion()">＋ প্রশ্ন যোগ করুন</button>
+<button class="btn secondary" onclick="clearQuestionForm()">ফর্ম পরিষ্কার</button>
+</div>
+
+<p class="hint">প্রশ্ন যোগ করলে ডানদিকে তালিকায় দেখা যাবে। প্রতিটি প্রশ্ন পরে মুছতেও পারবেন।</p>
+</section>
+
+<section class="panel right">
+<h2>৩. প্রশ্নপত্র / Your Question Paper</h2>
+
+<div class="stats">
+<span class="pill" id="count">প্রশ্ন: 0</span>
+<span class="pill" id="total">মোট নম্বর: 0</span>
+<span class="pill" id="savedState">এখনও সেভ হয়নি</span>
+</div>
+
+<div class="tabs">
+<button class="tab active" id="tabQ" onclick="showTab('questions')">প্রশ্ন তালিকা</button>
+<button class="tab" id="tabP" onclick="showTab('preview')">প্রিভিউ</button>
+<button class="tab" id="tabA" onclick="showTab('answers')">Answer Key</button>
+<button class="tab" id="tabS" onclick="showTab('saved')">Saved Papers</button>
+</div>
+
+<div id="questionsView">
+<div id="questionList" class="empty">এখনও কোনো প্রশ্ন যোগ করা হয়নি। বামদিকের ফর্ম থেকে প্রশ্ন যোগ করুন।</div>
+</div>
+
+<div id="previewView" class="hidden">
+<div class="toolbar no-print">
+<button class="btn dark" onclick="printPaper(false)">🖨️ প্রশ্নপত্র প্রিন্ট / PDF</button>
+<button class="btn secondary" onclick="printPaper(true)">Answer Key PDF</button>
+</div>
+<div class="paper" id="paperPreview"></div>
+</div>
+
+<div id="answersView" class="hidden">
+<div class="toolbar no-print">
+<button class="btn dark" onclick="printPaper(true)">🖨️ Answer Key প্রিন্ট / PDF</button>
+</div>
+<div id="answerPreview" class="paper"></div>
+</div>
+
+<div id="savedView" class="hidden">
+<div class="toolbar no-print">
+<button class="btn" onclick="savePaper()">💾 এই প্রশ্নপত্র সেভ করুন</button>
+<button class="btn secondary" onclick="exportBackup()">Backup Export</button>
+<label class="btn secondary" style="margin:0;cursor:pointer">
+Backup Import
+<input type="file" accept="application/json" onchange="importBackup(event)" style="display:none">
+</label>
+</div>
+<div id="savedList" class="empty">এখনও কোনো প্রশ্নপত্র সেভ করা হয়নি।</div>
+</div>
+
+<div class="toolbar no-print">
+<button class="btn" onclick="savePaper()">💾 Save Paper</button>
+<button class="btn secondary" onclick="newPaper()">＋ নতুন প্রশ্নপত্র</button>
+<button class="btn secondary" onclick="exportCurrent()">Export JSON</button>
+</div>
+
+<p class="hint">তথ্য এই ডিভাইসের ব্রাউজারে সেভ থাকে। অন্য ফোনে নিতে Backup Export ব্যবহার করুন। PDF করতে Print বেছে নিয়ে “Save as PDF” নির্বাচন করুন।</p>
+</section>
+</main>
+
+<footer>PAPER PRO by MISBAHUL SAKLINE · Version 1.0 · Works offline after download</footer>
+
+<script>
+let qs=[],papers=[];
+const $=id=>document.getElementById(id);
+
+const types={
+MCQ:'MCQ',
+VSA:'Very Short Answer',
+SA:'Short Answer',
+LA:'Long Answer',
+TF:'True / False',
+FB:'Fill in the Blanks',
+MATCH:'Match the Following',
+AR:'Assertion–Reason',
+NUM:'Numerical',
+DIAGRAM:'Diagram-based'
+};
+
+try{
+papers=JSON.parse(localStorage.getItem('paperpro_papers')||'[]');
+}catch(e){
+papers=[];
+}
+
+function typeChanged(){
+$('optionsBox').classList.toggle(
+'hidden',
+!['MCQ','MATCH','AR'].includes($('type').value)
+);
+}
+
+function clearQuestionForm(){
+['question','op1','op2','op3','op4','answer','explanation']
+.forEach(x=>$(x).value='');
+$('marks').value=1;
+}
+
+function addQuestion(){
+let q=$('question').value.trim();
+if(!q){
+alert('প্রশ্নটি লিখুন।');
+return;
+}
+
+let t=$('type').value;
+let opts=['op1','op2','op3','op4']
+.map(x=>$(x).value.trim()).filter(Boolean);
+
+if(t==='MCQ'&&opts.length<2){
+alert('MCQ-এর জন্য অন্তত ২টি option দিন।');
+return;
+}
+
+qs.push({
+id:Date.now()+Math.random(),
+type:t,
+text:q,
+opts,
+marks:Number($('marks').value)||0,
+answer:$('answer').value.trim(),
+explanation:$('explanation').value.trim()
+});
+
+clearQuestionForm();
+render();
+showTab('questions');
+}
+
+function removeQ(id){
+qs=qs.filter(q=>q.id!==id);
+render();
+}
+
+function esc(s){
+return String(s??'').replace(/[&<>"']/g,c=>({
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#39;'
+}[c]));
+}
+
+function info(){
+return {
+school:$('school').value,
+cls:$('cls').value,
+board:$('board').value,
+subject:$('subject').value,
+lang:$('lang').value,
+exam:$('exam').value,
+duration:$('duration').value,
+fullmarks:$('fullmarks').value,
+teacher:$('teacher').value
+};
+}
+
+function total(){
+return qs.reduce((a,q)=>a+q.marks,0);
+}
+
+function render(){
+$('count').textContent='প্রশ্ন: '+qs.length;
+$('total').textContent='মোট নম্বর: '+total();
+$('savedState').textContent='Draft';
+
+let list=$('questionList');
+
+if(!qs.length){
+list.className='empty';
+list.textContent='এখনও কোনো প্রশ্ন যোগ করা হয়নি।';
+}else{
+list.className='';
+list.innerHTML=qs.map((q,i)=>`
+<div class="qitem">
+<div class="qhead">
+<strong>${i+1}. ${esc(q.text)}</strong>
+<span class="small">${q.marks} নম্বর</span>
+</div>
+<div class="small">${types[q.type]}</div>
+${q.opts.length?'<p>'+q.opts.map((o,j)=>String.fromCharCode(65+j)+') '+esc(o)).join('　 ')+'</p>':''}
+<button class="btn danger" style="padding:5px 9px;font-size:12px" onclick="removeQ(${q.id})">মুছুন</button>
+</div>
+`).join('');
+}
+
+let d=info();
+
+let head=`
+<h2>${esc(d.school||'প্রতিষ্ঠানের নাম')}</h2>
+<h3>${esc(d.exam||'প্রশ্নপত্র')}</h3>
+<div class="meta">
+${esc(d.board)} · ${esc(d.cls)} · ${esc(d.subject)}
+<br>
+${esc(d.lang)} | সময়: ${esc(d.duration||'—')} | পূর্ণমান: ${esc(d.fullmarks||total())}
+<br>
+শিক্ষক: ${esc(d.teacher)}
+</div>
+<hr>
+`;
+
+$('paperPreview').innerHTML=head+
+qs.map((q,i)=>`
+<div class="qrow">
+<span class="marks">[${q.marks}]</span>
+<b>${i+1}.</b> ${esc(q.text)}
+${q.opts.length?'<div class="opts">'+q.opts.map((o,j)=>`<span>(${String.fromCharCode(65+j)}) ${esc(o)}</span>`).join('')+'</div>':''}
+</div>
+`).join('')+
+(qs.length?'':'<p style="text-align:center">প্রশ্ন যোগ করলে এখানে প্রিভিউ দেখা যাবে।</p>');
+
+$('answerPreview').innerHTML=head+
+qs.map((q,i)=>`
+<div class="qrow">
+<b>${i+1}.</b> ${esc(q.text)}
+<div class="ans">
+<b>উত্তর:</b> ${esc(q.answer||'উল্লেখ করা হয়নি')}
+${q.explanation?'<br><b>ব্যাখ্যা:</b> '+esc(q.explanation):''}
+</div>
+</div>
+`).join('');
+}
+
+function showTab(tab){
+['questions','preview','answers','saved'].forEach(x=>
+$(x+'View').classList.toggle('hidden',x!==tab)
+);
+
+['Q','P','A','S'].forEach((x,i)=>
+$('tab'+x).classList.toggle(
+'active',
+['questions','preview','answers','saved'][i]===tab
+)
+);
+
+if(tab==='saved')renderSaved();
+}
+
+function savePaper(){
+if(!qs.length){
+alert('আগে অন্তত একটি প্রশ্ন যোগ করুন।');
+return;
+}
+
+let p={
+id:Date.now(),
+date:new Date().toLocaleString(),
+info:info(),
+questions:qs
+};
+
+papers.unshift(p);
+
+localStorage.setItem('paperpro_papers',JSON.stringify(papers));
+
+$('savedState').textContent='Saved ✓';
+alert('প্রশ্নপত্র সেভ হয়েছে।');
+renderSaved();
+}
+
+function renderSaved(){
+let el=$('savedList');
+
+if(!papers.length){
+el.className='empty';
+el.textContent='এখনও কোনো প্রশ্নপত্র সেভ করা হয়নি।';
+return;
+}
+
+el.className='';
+
+el.innerHTML=papers.map(p=>`
+<div class="qitem">
+<b>${esc(p.info.exam||'Untitled')} — ${esc(p.info.cls)} ${esc(p.info.subject)}</b>
+<div class="small">${esc(p.date)} · ${p.questions.length} প্রশ্ন</div>
+<div class="btns">
+<button class="btn" onclick="loadPaper(${p.id})">Open</button>
+<button class="btn danger" onclick="deletePaper(${p.id})">Delete</button>
+</div>
+</div>
+`).join('');
+}
+
+function loadPaper(id){
+let p=papers.find(x=>x.id===id);
+if(!p)return;
+
+Object.entries(p.info).forEach(([k,v])=>{
+if($(k))$(k).value=v;
+});
+
+qs=p.questions;
+render();
+showTab('questions');
+}
+
+function deletePaper(id){
+if(!confirm('এই সেভ করা প্রশ্নপত্র মুছবেন?'))return;
+
+papers=papers.filter(p=>p.id!==id);
+localStorage.setItem('paperpro_papers',JSON.stringify(papers));
+renderSaved();
+}
+
+function newPaper(){
+if(qs.length&&!confirm('বর্তমান unsaved প্রশ্ন মুছে নতুন শুরু করবেন?'))return;
+
+qs=[];
+['school','subject','exam','duration','fullmarks']
+.forEach(x=>$(x).value='');
+
+$('teacher').value='MISBAHUL SAKLINE';
+render();
+showTab('questions');
+}
+
+function download(name,data){
+let a=document.createElement('a');
+let u=URL.createObjectURL(
+new Blob([JSON.stringify(data,null,2)],{type:'application/json'})
+);
+a.href=u;
+a.download=name;
+a.click();
+URL.revokeObjectURL(u);
+}
+
+function exportCurrent(){
+download('paper-pro-question-paper.json',{
+info:info(),
+questions:qs
+});
+}
+
+function exportBackup(){
+download('paper-pro-backup.json',papers);
+}
+
+function importBackup(e){
+let f=e.target.files[0];
+if(!f)return;
+
+let r=new FileReader();
+
+r.onload=()=>{
+try{
+let a=JSON.parse(r.result);
+if(!Array.isArray(a))throw 0;
+
+papers=a;
+localStorage.setItem('paperpro_papers',JSON.stringify(papers));
+renderSaved();
+alert('Backup import হয়েছে।');
+
+}catch(_){
+alert('ফাইলটি সঠিক backup নয়।');
+}
+};
+
+r.readAsText(f);
+}
+
+function printPaper(answer){
+let html=answer?
+$('answerPreview').innerHTML:
+$('paperPreview').innerHTML;
+
+let w=window.open('','_blank');
+
+if(!w){
+alert('Popup allow করুন, তারপর আবার চেষ্টা করুন।');
+return;
+}
+
+w.document.write(`
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Question Paper</title>
+<style>
+body{font:15px/1.6 Arial,"Noto Sans Bengali",sans-serif;color:#111;padding:25px}
+.meta{text-align:center;font-size:13px;margin:7px 0 15px}
+h2,h3{text-align:center;margin:3px}
+.qrow{margin:14px 0;break-inside:avoid}
+.marks{float:right}
+.opts{margin:5px 0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:3px 15px}
+.ans{font-size:13px;margin:4px 0 0 20px}
+@page{margin:18mm}
+</style>
+</head>
+<body>${html}</body>
+</html>
+`);
+
+w.document.close();
+w.focus();
+setTimeout(()=>w.print(),400);
+}
+
+typeChanged();
+render();
+</script>
+</body>
+  </html>q

@@ -1,581 +1,96 @@
 <!doctype html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102b46">
-<title>PAPER PRO by MISBAHUL SAKLINE</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10243d"><title>PAPER PRO | MISBAHUL SAKLINE</title>
 <style>
-:root{--navy:#102b46;--green:#13845b;--bg:#f3f6f8;--ink:#172331;--muted:#647386;--line:#dce4ea}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
-.top{background:linear-gradient(120deg,#102b46,#174d59);color:white;padding:22px max(18px,calc((100% - 1150px)/2))}
-.top h1{margin:0;font-size:clamp(22px,4vw,32px);letter-spacing:.4px}
-.top p{margin:4px 0 0;color:#d4e7e8}
-.wrap{max-width:1150px;margin:22px auto;padding:0 14px;display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:18px}
-.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 12px #17334b0a}
-.panel h2{font-size:18px;margin:0 0 14px;color:var(--navy)}
-label{display:block;font-weight:650;font-size:13px;margin:10px 0 5px}
-input,select,textarea{width:100%;padding:10px 11px;border:1px solid #cbd6df;border-radius:8px;font:inherit;background:white;color:var(--ink)}
-textarea{min-height:78px;resize:vertical}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
-.btn{border:0;border-radius:8px;padding:10px 13px;font-weight:700;cursor:pointer;background:var(--green);color:white}
-.btn.secondary{background:#e8eef2;color:var(--navy)}
-.btn.dark{background:var(--navy)}
-.btn.danger{background:#a33b3b}
-.hint{font-size:12px;color:var(--muted);margin-top:6px}
-.stats{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 14px}
-.pill{background:#edf4f1;color:#176448;padding:5px 10px;border-radius:30px;font-size:12px;font-weight:700}
-.qitem{border:1px solid var(--line);border-radius:10px;padding:12px;margin:9px 0}
-.qhead{display:flex;justify-content:space-between;gap:10px}
-.qitem p{margin:7px 0;white-space:pre-wrap}
-.small{font-size:12px;color:var(--muted)}
-.empty{padding:30px 12px;text-align:center;color:var(--muted);border:1px dashed #bdcbd5;border-radius:10px}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.paper{background:white;color:#111;padding:26px;border:1px solid var(--line);border-radius:10px;min-height:280px}
-.paper h2,.paper h3{text-align:center;margin:3px}
-.paper .meta{text-align:center;font-size:13px;margin:7px 0 15px}
-.paper .qrow{margin:13px 0;break-inside:avoid}
-.paper .marks{float:right}
-.paper .opts{margin:5px 0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:2px 15px}
-.paper .ans{font-size:13px;color:#333;margin:4px 0 0 20px}
-.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px}
-.tab{background:#e9eff3;color:var(--navy);border:0;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}
-.tab.active{background:var(--navy);color:white}
-.hidden{display:none!important}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:12px 10px 28px}
-@media(max-width:800px){.wrap{grid-template-columns:1fr}.top{padding:18px}.paper{padding:17px}}
-@media print{
-body{background:white}
-.top,.left,.toolbar,.tabs,.no-print,footer{display:none!important}
-.wrap{display:block;margin:0;padding:0;max-width:none}
-.panel{border:0;box-shadow:none;padding:0}
-.paper{border:0;border-radius:0;padding:0;min-height:0}
-.right>.panel>h2,.stats{display:none!important}
-.paper .qrow{page-break-inside:avoid}
-}
+:root{--navy:#10243d;--blue:#2859a5;--green:#13845d;--bg:#f3f6fa;--ink:#172337;--muted:#718096;--line:#e1e7ef;--red:#bd4141}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Noto Sans Bengali",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}header{background:linear-gradient(120deg,#10243d,#1d536d);color:white;padding:18px max(16px,calc((100% - 1250px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand h1{margin:0;font-size:25px;letter-spacing:1px}.brand p{margin:2px 0;color:#d5e5ef;font-size:12px}.topright{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.status{font-size:12px;border:1px solid #ffffff55;border-radius:30px;padding:6px 10px}.layout{max-width:1250px;margin:20px auto;padding:0 14px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:17px}.side{background:var(--navy);color:white;border-radius:14px;padding:13px;height:max-content;position:sticky;top:12px}.side h3{font-size:12px;color:#a9c4db;margin:7px 9px}.nav{width:100%;display:block;text-align:left;color:#dce9f5;background:transparent;border:0;border-radius:8px;padding:11px;margin:2px 0;font-weight:650}.nav.active,.nav:hover{background:#ffffff20;color:#fff}.main{min-width:0}.page{display:none}.page.active{display:block}.title{font-size:23px;margin:0 0 3px}.sub{font-size:13px;color:var(--muted);margin:0 0 16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:13px 0}.stat,.card{background:white;border:1px solid var(--line);border-radius:13px;padding:16px;box-shadow:0 3px 12px #10243d08}.stat small{color:var(--muted)}.stat strong{display:block;color:var(--navy);font-size:23px;margin-top:4px}.card{margin-bottom:14px}.card h2{font-size:17px;margin:0 0 13px;color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field{margin-bottom:11px}label{display:block;font-size:13px;font-weight:700;margin-bottom:5px}input,select,textarea{width:100%;padding:10px 11px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:var(--ink)}textarea{min-height:76px;resize:vertical}.btn{border:0;border-radius:8px;padding:10px 13px;background:var(--blue);color:white;font-weight:700}.btn.green{background:var(--green)}.btn.dark{background:var(--navy)}.btn.light{background:#eaf0f7;color:var(--navy)}.btn.red{background:var(--red)}.btn:disabled{opacity:.55;cursor:not-allowed}.btn.small{padding:6px 9px;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.muted{font-size:12px;color:var(--muted)}.badge{display:inline-block;background:#eaf4ef;color:#13704d;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:700}.item{border:1px solid var(--line);border-radius:10px;padding:12px;margin:9px 0}.item p{white-space:pre-wrap;margin:7px 0}.itemtop{display:flex;justify-content:space-between;gap:8px}.empty{border:1px dashed #bdc9d8;border-radius:10px;padding:24px;text-align:center;color:var(--muted)}.tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}.tab{border:0;padding:8px 12px;border-radius:8px;background:#e9eef5;color:var(--navy);font-weight:700}.tab.active{background:var(--navy);color:white}.paper{background:white;border:1px solid var(--line);border-radius:10px;padding:26px;color:#111}.paper h2,.paper h3{text-align:center;margin:3px}.paper .meta{text-align:center;font-size:13px;line-height:1.8;margin:12px 0}.paper .pq{margin:14px 0;break-inside:avoid}.marks{float:right}.options{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;margin:6px 0 0 25px}.answer{font-size:13px;margin:5px 0 0 20px}.hidden{display:none!important}.notice{padding:10px 12px;border-radius:9px;background:#edf4fb;color:#214b75;font-size:13px;margin:10px 0}.notice.error{background:#fff0f0;color:#963434}.notice.success{background:#eaf7ef;color:#17633f}.search{margin-bottom:12px}.modal{position:fixed;inset:0;background:#091727aa;display:none;align-items:center;justify-content:center;padding:15px;z-index:20}.modal.open{display:flex}.modalbox{background:white;border-radius:14px;padding:20px;width:min(580px,100%);max-height:90vh;overflow:auto}.modalhead{display:flex;justify-content:space-between;align-items:center}.modalhead h2{margin:0;font-size:19px}.x{border:0;background:#edf1f5;border-radius:8px;padding:6px 10px}.foot{text-align:center;color:var(--muted);font-size:12px;padding:18px}.pill{display:inline-block;background:#edf4f1;color:#176448;border-radius:20px;padding:4px 9px;font-size:11px}.smallnote{font-size:12px;color:var(--muted);line-height:1.55}@media(max-width:780px){.layout{grid-template-columns:1fr}.side{position:static;display:flex;overflow:auto;gap:3px;padding:8px}.side h3{display:none}.nav{width:auto;white-space:nowrap;padding:9px}.grid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:19px}.paper{padding:14px}.options{grid-template-columns:1fr}header{padding:15px}.brand h1{font-size:21px}}@media print{body{background:white}.no-print,header,.side,.foot{display:none!important}.layout{display:block;margin:0;padding:0}.page{display:none!important}#printArea{display:block!important}.paper{border:0;padding:0}.paper .pq{break-inside:avoid}@page{margin:17mm}}
 </style>
 </head>
 <body>
-
-<header class="top">
-<h1>📘 PAPER PRO</h1>
-<p>by MISBAHUL SAKLINE · Smart Question Paper Maker</p>
-</header>
-
-<main class="wrap">
-
-<section class="panel left">
-<h2>১. পরীক্ষার তথ্য / Exam Details</h2>
-
-<label>প্রতিষ্ঠান / School or Coaching Name</label>
-<input id="school" placeholder="যেমন: BIOTA – by MISBAHUL Sir">
-
-<div class="grid2">
-<div>
-<label>শ্রেণি / Class</label>
-<select id="cls">
-<option>Class 5</option><option>Class 6</option>
-<option>Class 7</option><option>Class 8</option>
-<option selected>Class 9</option><option>Class 10</option>
-<option>Class 11</option><option>Class 12</option>
-</select>
-</div>
-<div>
-<label>বোর্ড / Board</label>
-<select id="board">
-<option>WBBSE</option><option>WBCHSE</option>
-<option>CBSE</option><option>ICSE</option>
-<option>ISC</option><option>Other</option>
-</select>
-</div>
-</div>
-
-<div class="grid2">
-<div>
-<label>বিষয় / Subject</label>
-<input id="subject" placeholder="Biology">
-</div>
-<div>
-<label>ভাষা / Language</label>
-<select id="lang">
-<option>বাংলা</option><option>English</option>
-<option selected>বাংলা + English</option>
-</select>
-</div>
-</div>
-
-<label>পরীক্ষার নাম / Exam Title</label>
-<input id="exam" placeholder="যেমন: Unit Test – 1">
-
-<div class="grid2">
-<div>
-<label>সময় / Time</label>
-<input id="duration" placeholder="1 Hour 30 Minutes">
-</div>
-<div>
-<label>পূর্ণমান / Full Marks</label>
-<input id="fullmarks" type="number" min="0" placeholder="35">
-</div>
-</div>
-
-<label>শিক্ষকের নাম / Teacher</label>
-<input id="teacher" value="MISBAHUL SAKLINE">
-
-<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
-
-<h2>২. প্রশ্ন যোগ করুন / Add Question</h2>
-
-<label>প্রশ্নের ধরন / Question Type</label>
-<select id="type" onchange="typeChanged()">
-<option value="MCQ">MCQ</option>
-<option value="VSA">Very Short Answer</option>
-<option value="SA">Short Answer</option>
-<option value="LA">Long Answer</option>
-<option value="TF">True / False</option>
-<option value="FB">Fill in the Blanks</option>
-<option value="MATCH">Match the Following</option>
-<option value="AR">Assertion–Reason</option>
-<option value="NUM">Numerical</option>
-<option value="DIAGRAM">Diagram-based</option>
-</select>
-
-<label>প্রশ্ন / Question</label>
-<textarea id="question" placeholder="এখানে প্রশ্ন লিখুন..."></textarea>
-
-<div id="optionsBox">
-<label>বিকল্প / Options</label>
-<div class="grid2">
-<input id="op1" placeholder="Option A">
-<input id="op2" placeholder="Option B">
-<input id="op3" placeholder="Option C">
-<input id="op4" placeholder="Option D">
-</div>
-</div>
-
-<div class="grid2">
-<div>
-<label>নম্বর / Marks</label>
-<input id="marks" type="number" min="0" step="0.5" value="1">
-</div>
-<div>
-<label>সঠিক উত্তর / Answer</label>
-<input id="answer" placeholder="A / উত্তর লিখুন">
-</div>
-</div>
-
-<label>ব্যাখ্যা (ঐচ্ছিক) / Explanation</label>
-<textarea id="explanation" placeholder="শিক্ষকের নোট বা ব্যাখ্যা..."></textarea>
-
-<div class="btns">
-<button class="btn" onclick="addQuestion()">＋ প্রশ্ন যোগ করুন</button>
-<button class="btn secondary" onclick="clearQuestionForm()">ফর্ম পরিষ্কার</button>
-</div>
-
-<p class="hint">প্রশ্ন যোগ করলে ডানদিকে তালিকায় দেখা যাবে। প্রতিটি প্রশ্ন পরে মুছতেও পারবেন।</p>
-</section>
-
-<section class="panel right">
-<h2>৩. প্রশ্নপত্র / Your Question Paper</h2>
-
-<div class="stats">
-<span class="pill" id="count">প্রশ্ন: 0</span>
-<span class="pill" id="total">মোট নম্বর: 0</span>
-<span class="pill" id="savedState">এখনও সেভ হয়নি</span>
-</div>
-
-<div class="tabs">
-<button class="tab active" id="tabQ" onclick="showTab('questions')">প্রশ্ন তালিকা</button>
-<button class="tab" id="tabP" onclick="showTab('preview')">প্রিভিউ</button>
-<button class="tab" id="tabA" onclick="showTab('answers')">Answer Key</button>
-<button class="tab" id="tabS" onclick="showTab('saved')">Saved Papers</button>
-</div>
-
-<div id="questionsView">
-<div id="questionList" class="empty">এখনও কোনো প্রশ্ন যোগ করা হয়নি। বামদিকের ফর্ম থেকে প্রশ্ন যোগ করুন।</div>
-</div>
-
-<div id="previewView" class="hidden">
-<div class="toolbar no-print">
-<button class="btn dark" onclick="printPaper(false)">🖨️ প্রশ্নপত্র প্রিন্ট / PDF</button>
-<button class="btn secondary" onclick="printPaper(true)">Answer Key PDF</button>
-</div>
-<div class="paper" id="paperPreview"></div>
-</div>
-
-<div id="answersView" class="hidden">
-<div class="toolbar no-print">
-<button class="btn dark" onclick="printPaper(true)">🖨️ Answer Key প্রিন্ট / PDF</button>
-</div>
-<div id="answerPreview" class="paper"></div>
-</div>
-
-<div id="savedView" class="hidden">
-<div class="toolbar no-print">
-<button class="btn" onclick="savePaper()">💾 এই প্রশ্নপত্র সেভ করুন</button>
-<button class="btn secondary" onclick="exportBackup()">Backup Export</button>
-<label class="btn secondary" style="margin:0;cursor:pointer">
-Backup Import
-<input type="file" accept="application/json" onchange="importBackup(event)" style="display:none">
-</label>
-</div>
-<div id="savedList" class="empty">এখনও কোনো প্রশ্নপত্র সেভ করা হয়নি।</div>
-</div>
-
-<div class="toolbar no-print">
-<button class="btn" onclick="savePaper()">💾 Save Paper</button>
-<button class="btn secondary" onclick="newPaper()">＋ নতুন প্রশ্নপত্র</button>
-<button class="btn secondary" onclick="exportCurrent()">Export JSON</button>
-</div>
-
-<p class="hint">তথ্য এই ডিভাইসের ব্রাউজারে সেভ থাকে। অন্য ফোনে নিতে Backup Export ব্যবহার করুন। PDF করতে Print বেছে নিয়ে “Save as PDF” নির্বাচন করুন।</p>
-</section>
-</main>
-
-<footer>PAPER PRO by MISBAHUL SAKLINE · Version 1.0 · Works offline after download</footer>
-
-<script>
-let qs=[],papers=[];
+<header><div class="brand"><h1>📘 PAPER PRO</h1><p>by MISBAHUL SAKLINE · SMART QUESTION PAPER MAKER</p></div><div class="topright"><span id="cloudBadge" class="status">Local mode</span><span id="userBadge" class="status">Not signed in</span></div></header>
+<div class="layout">
+<aside class="side no-print"><h3>WORKSPACE</h3>
+<button class="nav active" data-page="home">▦ Dashboard</button><button class="nav" data-page="builder">＋ Create Paper</button><button class="nav" data-page="bank">▤ Question Bank</button><button class="nav" data-page="saved">▣ Saved Papers</button><button class="nav" data-page="ai">✦ AI Generator</button><button class="nav" data-page="account">☁ Teacher Login & Cloud</button><button class="nav" data-page="backup">⚙ Backup & Settings</button>
+</aside>
+<main class="main">
+<section id="home" class="page active"><h2 class="title">Teacher Dashboard</h2><p class="sub">Create, manage and print examination papers from one workspace.</p>
+<div class="stats"><div class="stat"><small>Saved Papers</small><strong id="statPapers">0</strong></div><div class="stat"><small>Question Bank</small><strong id="statBank">0</strong></div><div class="stat"><small>Current Questions</small><strong id="statQuestions">0</strong></div></div>
+<div class="card"><h2>Quick Actions</h2><div class="actions"><button class="btn green" data-go="builder">＋ Create Question Paper</button><button class="btn" data-go="ai">✦ Generate with AI</button><button class="btn dark" data-go="account">☁ Teacher Login</button></div></div>
+<div class="card"><h2>Included Features</h2><p>✓ Classes 5–12 · WBBSE · WBCHSE · CBSE · ICSE · ISC</p><p>✓ Bengali · English · Bilingual</p><p>✓ Question Builder · Question Bank · Saved Papers</p><p>✓ AI Question Drafting · Answer Key · Print / Save as PDF</p><p>✓ Teacher Account · Cloud Sync · Backup / Restore</p><p class="smallnote">AI generation and cloud services become active after the owner completes the Supabase and Vercel configuration in the included setup guide.</p></div></section>
+<section id="builder" class="page"><h2 class="title">Create Question Paper</h2><p class="sub">Enter exam details, then add questions manually or from your question bank.</p>
+<div class="card"><h2>Exam Information</h2><div class="grid">
+<div class="field"><label>School / Coaching</label><input id="school" placeholder="BIOTA by MISBAHUL Sir"></div><div class="field"><label>Exam Title</label><input id="exam" placeholder="Unit Test / Annual Examination"></div>
+<div class="field"><label>Class</label><select id="cls"><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select></div>
+<div class="field"><label>Board</label><select id="board"><option>WBBSE</option><option>WBCHSE</option><option>CBSE</option><option>ICSE</option><option>ISC</option><option>Other</option></select></div>
+<div class="field"><label>Subject</label><input id="subject" placeholder="Biology / History / Geography"></div><div class="field"><label>Chapter / Topic</label><input id="chapter" placeholder="Chapter name"></div>
+<div class="field"><label>Language</label><select id="language"><option>বাংলা</option><option>English</option><option>Bilingual</option></select></div><div class="field"><label>Duration</label><input id="duration" placeholder="1 Hour 30 Minutes"></div>
+<div class="field"><label>Full Marks</label><input id="fullmarks" type="number" min="0" placeholder="35"></div><div class="field"><label>Teacher</label><input id="teacher" value="MISBAHUL SAKLINE"></div></div></div>
+<div class="card"><h2>Add Question</h2><div class="field"><label>Question Type</label><select id="qtype"><option>MCQ</option><option>Very Short Answer</option><option>Short Answer</option><option>Long Answer</option><option>True / False</option><option>Fill in the Blanks</option><option>Match the Following</option><option>Assertion–Reason</option><option>Numerical</option><option>Diagram-based</option></select></div>
+<div class="field"><label>Question</label><textarea id="qtext" placeholder="Write your question here..."></textarea></div><div class="field"><label>Options (MCQ / matching, one per line)</label><textarea id="qoptions" placeholder="Option A&#10;Option B&#10;Option C&#10;Option D"></textarea></div>
+<div class="grid"><div class="field"><label>Marks</label><input id="qmarks" type="number" min="0" step="0.5" value="1"></div><div class="field"><label>Correct / Expected Answer</label><input id="qanswer" placeholder="Enter answer"></div></div><div class="field"><label>Explanation / Teacher Notes</label><textarea id="qexplain" placeholder="Optional explanation"></textarea></div>
+<div class="actions"><button class="btn green" id="addQuestion">＋ Add Question</button><button class="btn light" id="clearQuestion">Clear Form</button></div></div>
+<div class="card"><h2>Current Paper <span class="pill" id="paperTotal">0 marks</span></h2><div id="questionList" class="empty">No questions added yet.</div><div class="actions"><button class="btn dark" id="previewBtn">Preview Paper</button><button class="btn green" id="savePaper">Save Paper</button><button class="btn light" id="newPaper">New Paper</button></div></div>
+<div id="previewCard" class="card hidden"><div class="actions no-print"><button class="btn green" id="printQuestions">Print Question Paper / PDF</button><button class="btn dark" id="printAnswers">Print Answer Key / PDF</button></div><div id="paperPreview" class="paper"></div></div></section>
+<section id="bank" class="page"><h2 class="title">Question Bank</h2><p class="sub">Your saved reusable questions. Sign in to sync your bank across devices.</p><div class="card"><input class="search" id="bankSearch" placeholder="Search questions, chapter, subject..."><div class="grid"><div class="field"><label>Class filter</label><select id="filterClass"><option value="">All classes</option><option>Class 5</option><option>Class 6</option><option>Class 7</option><option>Class 8</option><option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option></select></div><div class="field"><label>Board filter</label><select id="filterBoard"><option value="">All boards</option><option>WBBSE</option><option>WBCHSE</option><option>CBSE</option><option>ICSE</option><option>ISC</option></select></div></div><div id="bankList"></div></div></section>
+<section id="saved" class="page"><h2 class="title">Saved Papers</h2><p class="sub">Open, duplicate or delete your question papers.</p><div class="card"><input class="search" id="paperSearch" placeholder="Search saved papers..."><div id="savedList"></div></div></section>
+<section id="ai" class="page"><h2 class="title">AI Question Generator</h2><p class="sub">Generate a first draft from a chapter or topic. A teacher must verify all answers and syllabus alignment.</p><div class="card"><div class="field"><label>Chapter / Topic</label><input id="aiTopic" placeholder="e.g. Sexual Reproduction in Flowering Plants"></div><div class="grid"><div class="field"><label>Number of Questions</label><select id="aiCount"><option>5</option><option>10</option><option>15</option><option>20</option></select></div><div class="field"><label>Question Type</label><select id="aiTypes"><option value="MCQ,Short Answer">MCQ + Short Answer</option><option value="MCQ">MCQ only</option><option value="Very Short Answer,Short Answer,Long Answer">Descriptive</option><option value="Assertion–Reason,MCQ">Assertion–Reason + MCQ</option><option value="Numerical,Short Answer">Numerical + Short Answer</option><option value="Mixed">Mixed question types</option></select></div></div><div class="field"><label>Difficulty</label><select id="aiDifficulty"><option>Balanced</option><option>Easy</option><option>Moderate</option><option>Hard</option></select></div><button class="btn green" id="generateAI">✦ Generate Questions</button><div id="aiMessage" class="notice hidden"></div><p class="smallnote">AI generation needs the site owner's OPENAI_API_KEY configured as a Vercel Environment Variable. The key is never placed in this page.</p></div></section>
+<section id="account" class="page"><h2 class="title">Teacher Account & Cloud Sync</h2><p class="sub">Create your own teacher account to save papers and question bank online.</p><div class="card"><div id="accountStatus" class="notice">Checking configuration…</div><div id="authForm"><div class="field"><label>Full Name</label><input id="authName" placeholder="Teacher name"></div><div class="field"><label>Email</label><input id="authEmail" type="email" placeholder="teacher@example.com"></div><div class="field"><label>Password (minimum 8 characters)</label><input id="authPassword" type="password" minlength="8" placeholder="Create a strong password"></div><div class="actions"><button class="btn green" id="signUp">Create Account</button><button class="btn dark" id="signIn">Sign In</button></div></div><div id="signedIn" class="hidden"><p id="signedEmail"></p><div class="actions"><button class="btn green" id="syncNow">Sync Now</button><button class="btn red" id="signOut">Sign Out</button></div></div></div><div class="card"><h2>Cloud Sync Status</h2><p class="smallnote">Cloud data is private to the signed-in account through Supabase Row Level Security. Never share your password or Supabase service-role key. Only the public anon key belongs in the browser.</p></div></section>
+<section id="backup" class="page"><h2 class="title">Backup & Settings</h2><div class="card"><h2>Backup / Restore</h2><p class="smallnote">Export a backup regularly. Local data is stored in this browser; cloud data is stored in your signed-in account.</p><div class="actions"><button class="btn green" id="exportBackup">Download Full Backup</button><label class="btn light" style="cursor:pointer">Import Backup <input id="importBackup" type="file" accept="application/json" hidden></label></div></div><div class="card"><h2>Current Storage</h2><p>Saved papers: <b id="settingsPapers">0</b></p><p>Question bank: <b id="settingsBank">0</b></p><p class="smallnote">If browser storage is cleared, local-only data may be lost. Keep a backup.</p></div></section>
+</main></div>
+<div id="printArea" class="hidden"></div><footer class="foot">PAPER PRO by MISBAHUL SAKLINE · Teacher Edition</footer>
+<script src="/config.js"></script>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const $=id=>document.getElementById(id);
-
-const types={
-MCQ:'MCQ',
-VSA:'Very Short Answer',
-SA:'Short Answer',
-LA:'Long Answer',
-TF:'True / False',
-FB:'Fill in the Blanks',
-MATCH:'Match the Following',
-AR:'Assertion–Reason',
-NUM:'Numerical',
-DIAGRAM:'Diagram-based'
-};
-
-try{
-papers=JSON.parse(localStorage.getItem('paperpro_papers')||'[]');
-}catch(e){
-papers=[];
-}
-
-function typeChanged(){
-$('optionsBox').classList.toggle(
-'hidden',
-!['MCQ','MATCH','AR'].includes($('type').value)
-);
-}
-
-function clearQuestionForm(){
-['question','op1','op2','op3','op4','answer','explanation']
-.forEach(x=>$(x).value='');
-$('marks').value=1;
-}
-
-function addQuestion(){
-let q=$('question').value.trim();
-if(!q){
-alert('প্রশ্নটি লিখুন।');
-return;
-}
-
-let t=$('type').value;
-let opts=['op1','op2','op3','op4']
-.map(x=>$(x).value.trim()).filter(Boolean);
-
-if(t==='MCQ'&&opts.length<2){
-alert('MCQ-এর জন্য অন্তত ২টি option দিন।');
-return;
-}
-
-qs.push({
-id:Date.now()+Math.random(),
-type:t,
-text:q,
-opts,
-marks:Number($('marks').value)||0,
-answer:$('answer').value.trim(),
-explanation:$('explanation').value.trim()
-});
-
-clearQuestionForm();
-render();
-showTab('questions');
-}
-
-function removeQ(id){
-qs=qs.filter(q=>q.id!==id);
-render();
-}
-
-function esc(s){
-return String(s??'').replace(/[&<>"']/g,c=>({
-'&':'&amp;',
-'<':'&lt;',
-'>':'&gt;',
-'"':'&quot;',
-"'":'&#39;'
-}[c]));
-}
-
-function info(){
-return {
-school:$('school').value,
-cls:$('cls').value,
-board:$('board').value,
-subject:$('subject').value,
-lang:$('lang').value,
-exam:$('exam').value,
-duration:$('duration').value,
-fullmarks:$('fullmarks').value,
-teacher:$('teacher').value
-};
-}
-
-function total(){
-return qs.reduce((a,q)=>a+q.marks,0);
-}
-
-function render(){
-$('count').textContent='প্রশ্ন: '+qs.length;
-$('total').textContent='মোট নম্বর: '+total();
-$('savedState').textContent='Draft';
-
-let list=$('questionList');
-
-if(!qs.length){
-list.className='empty';
-list.textContent='এখনও কোনো প্রশ্ন যোগ করা হয়নি।';
-}else{
-list.className='';
-list.innerHTML=qs.map((q,i)=>`
-<div class="qitem">
-<div class="qhead">
-<strong>${i+1}. ${esc(q.text)}</strong>
-<span class="small">${q.marks} নম্বর</span>
-</div>
-<div class="small">${types[q.type]}</div>
-${q.opts.length?'<p>'+q.opts.map((o,j)=>String.fromCharCode(65+j)+') '+esc(o)).join('　 ')+'</p>':''}
-<button class="btn danger" style="padding:5px 9px;font-size:12px" onclick="removeQ(${q.id})">মুছুন</button>
-</div>
-`).join('');
-}
-
-let d=info();
-
-let head=`
-<h2>${esc(d.school||'প্রতিষ্ঠানের নাম')}</h2>
-<h3>${esc(d.exam||'প্রশ্নপত্র')}</h3>
-<div class="meta">
-${esc(d.board)} · ${esc(d.cls)} · ${esc(d.subject)}
-<br>
-${esc(d.lang)} | সময়: ${esc(d.duration||'—')} | পূর্ণমান: ${esc(d.fullmarks||total())}
-<br>
-শিক্ষক: ${esc(d.teacher)}
-</div>
-<hr>
-`;
-
-$('paperPreview').innerHTML=head+
-qs.map((q,i)=>`
-<div class="qrow">
-<span class="marks">[${q.marks}]</span>
-<b>${i+1}.</b> ${esc(q.text)}
-${q.opts.length?'<div class="opts">'+q.opts.map((o,j)=>`<span>(${String.fromCharCode(65+j)}) ${esc(o)}</span>`).join('')+'</div>':''}
-</div>
-`).join('')+
-(qs.length?'':'<p style="text-align:center">প্রশ্ন যোগ করলে এখানে প্রিভিউ দেখা যাবে।</p>');
-
-$('answerPreview').innerHTML=head+
-qs.map((q,i)=>`
-<div class="qrow">
-<b>${i+1}.</b> ${esc(q.text)}
-<div class="ans">
-<b>উত্তর:</b> ${esc(q.answer||'উল্লেখ করা হয়নি')}
-${q.explanation?'<br><b>ব্যাখ্যা:</b> '+esc(q.explanation):''}
-</div>
-</div>
-`).join('');
-}
-
-function showTab(tab){
-['questions','preview','answers','saved'].forEach(x=>
-$(x+'View').classList.toggle('hidden',x!==tab)
-);
-
-['Q','P','A','S'].forEach((x,i)=>
-$('tab'+x).classList.toggle(
-'active',
-['questions','preview','answers','saved'][i]===tab
-)
-);
-
-if(tab==='saved')renderSaved();
-}
-
-function savePaper(){
-if(!qs.length){
-alert('আগে অন্তত একটি প্রশ্ন যোগ করুন।');
-return;
-}
-
-let p={
-id:Date.now(),
-date:new Date().toLocaleString(),
-info:info(),
-questions:qs
-};
-
-papers.unshift(p);
-
-localStorage.setItem('paperpro_papers',JSON.stringify(papers));
-
-$('savedState').textContent='Saved ✓';
-alert('প্রশ্নপত্র সেভ হয়েছে।');
-renderSaved();
-}
-
-function renderSaved(){
-let el=$('savedList');
-
-if(!papers.length){
-el.className='empty';
-el.textContent='এখনও কোনো প্রশ্নপত্র সেভ করা হয়নি।';
-return;
-}
-
-el.className='';
-
-el.innerHTML=papers.map(p=>`
-<div class="qitem">
-<b>${esc(p.info.exam||'Untitled')} — ${esc(p.info.cls)} ${esc(p.info.subject)}</b>
-<div class="small">${esc(p.date)} · ${p.questions.length} প্রশ্ন</div>
-<div class="btns">
-<button class="btn" onclick="loadPaper(${p.id})">Open</button>
-<button class="btn danger" onclick="deletePaper(${p.id})">Delete</button>
-</div>
-</div>
-`).join('');
-}
-
-function loadPaper(id){
-let p=papers.find(x=>x.id===id);
-if(!p)return;
-
-Object.entries(p.info).forEach(([k,v])=>{
-if($(k))$(k).value=v;
-});
-
-qs=p.questions;
-render();
-showTab('questions');
-}
-
-function deletePaper(id){
-if(!confirm('এই সেভ করা প্রশ্নপত্র মুছবেন?'))return;
-
-papers=papers.filter(p=>p.id!==id);
-localStorage.setItem('paperpro_papers',JSON.stringify(papers));
-renderSaved();
-}
-
-function newPaper(){
-if(qs.length&&!confirm('বর্তমান unsaved প্রশ্ন মুছে নতুন শুরু করবেন?'))return;
-
-qs=[];
-['school','subject','exam','duration','fullmarks']
-.forEach(x=>$(x).value='');
-
-$('teacher').value='MISBAHUL SAKLINE';
-render();
-showTab('questions');
-}
-
-function download(name,data){
-let a=document.createElement('a');
-let u=URL.createObjectURL(
-new Blob([JSON.stringify(data,null,2)],{type:'application/json'})
-);
-a.href=u;
-a.download=name;
-a.click();
-URL.revokeObjectURL(u);
-}
-
-function exportCurrent(){
-download('paper-pro-question-paper.json',{
-info:info(),
-questions:qs
-});
-}
-
-function exportBackup(){
-download('paper-pro-backup.json',papers);
-}
-
-function importBackup(e){
-let f=e.target.files[0];
-if(!f)return;
-
-let r=new FileReader();
-
-r.onload=()=>{
-try{
-let a=JSON.parse(r.result);
-if(!Array.isArray(a))throw 0;
-
-papers=a;
-localStorage.setItem('paperpro_papers',JSON.stringify(papers));
-renderSaved();
-alert('Backup import হয়েছে।');
-
-}catch(_){
-alert('ফাইলটি সঠিক backup নয়।');
-}
-};
-
-r.readAsText(f);
-}
-
-function printPaper(answer){
-let html=answer?
-$('answerPreview').innerHTML:
-$('paperPreview').innerHTML;
-
-let w=window.open('','_blank');
-
-if(!w){
-alert('Popup allow করুন, তারপর আবার চেষ্টা করুন।');
-return;
-}
-
-w.document.write(`
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Question Paper</title>
-<style>
-body{font:15px/1.6 Arial,"Noto Sans Bengali",sans-serif;color:#111;padding:25px}
-.meta{text-align:center;font-size:13px;margin:7px 0 15px}
-h2,h3{text-align:center;margin:3px}
-.qrow{margin:14px 0;break-inside:avoid}
-.marks{float:right}
-.opts{margin:5px 0 0 24px;display:grid;grid-template-columns:1fr 1fr;gap:3px 15px}
-.ans{font-size:13px;margin:4px 0 0 20px}
-@page{margin:18mm}
-</style>
-</head>
-<body>${html}</body>
-</html>
-`);
-
-w.document.close();
-w.focus();
-setTimeout(()=>w.print(),400);
-}
-
-typeChanged();
-render();
+const cfg=window.PAPER_PRO_CONFIG||{};
+const supabaseReady=!!(cfg.supabaseUrl&&cfg.supabaseAnonKey&&!cfg.supabaseUrl.includes('YOUR_')&&!cfg.supabaseAnonKey.includes('YOUR_'));
+const sb=supabaseReady?createClient(cfg.supabaseUrl,cfg.supabaseAnonKey):null;
+let user=null,questions=[],papers=load('pp_papers',[]),bank=load('pp_bank',[]),editingId=null;
+function load(k,d){try{const v=JSON.parse(localStorage.getItem(k));return Array.isArray(v)?v:d}catch{return d}}
+function persist(){try{localStorage.setItem('pp_papers',JSON.stringify(papers));localStorage.setItem('pp_bank',JSON.stringify(bank));return true}catch(e){notify('Browser storage full. Export a backup and remove old data.','error');return false}}
+function uid(){return crypto.randomUUID?crypto.randomUUID():String(Date.now()+Math.random())}
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function notify(msg,type='success'){const el=$('accountStatus');if(el){el.textContent=msg;el.className='notice '+type}}
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===id));if(id==='bank')renderBank();if(id==='saved')renderSaved();refresh()}
+document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+function info(){return {school:$('school').value.trim(),exam:$('exam').value.trim(),cls:$('cls').value,board:$('board').value,subject:$('subject').value.trim(),chapter:$('chapter').value.trim(),language:$('language').value,duration:$('duration').value.trim(),fullmarks:$('fullmarks').value,teacher:$('teacher').value.trim()}}
+function total(arr=questions){return arr.reduce((s,q)=>s+(Number(q.marks)||0),0)}
+function refresh(){$('statPapers').textContent=papers.length;$('statBank').textContent=bank.length;$('statQuestions').textContent=questions.length;$('settingsPapers').textContent=papers.length;$('settingsBank').textContent=bank.length;$('paperTotal').textContent=total()+' marks'}
+function renderQuestions(){const el=$('questionList');if(!questions.length){el.className='empty';el.textContent='No questions added yet.';refresh();return}el.className='';el.innerHTML=questions.map((q,i)=>`<article class="item"><div class="itemtop"><b>${i+1}. ${esc(q.text)}</b><span class="badge">${esc(q.marks)} marks</span></div><div class="muted">${esc(q.type)}</div>${q.options?.length?`<p>${q.options.map((o,j)=>`(${String.fromCharCode(65+j)}) ${esc(o)}`).join(' · ')}</p>`:''}<div class="actions"><button class="btn small light" data-edit="${esc(q.id)}">Edit</button><button class="btn small red" data-remove="${esc(q.id)}">Delete</button><button class="btn small green" data-bank="${esc(q.id)}">Save to Bank</button></div></article>`).join('');el.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>editQ(b.dataset.edit));el.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{questions=questions.filter(q=>q.id!==b.dataset.remove);renderQuestions()});el.querySelectorAll('[data-bank]').forEach(b=>b.onclick=()=>addBank(b.dataset.bank));refresh()}
+$('addQuestion').onclick=()=>{const text=$('qtext').value.trim(),marks=Number($('qmarks').value);if(!text)return alert('Write the question first.');if(!Number.isFinite(marks)||marks<0)return alert('Enter valid marks.');const type=$('qtype').value,options=$('qoptions').value.split('\n').map(x=>x.trim()).filter(Boolean);if(type==='MCQ'&&options.length<2)return alert('Enter at least two MCQ options.');questions.push({id:uid(),type,text,options,marks,answer:$('qanswer').value.trim(),explanation:$('qexplain').value.trim()});clearQ();renderQuestions()};
+function clearQ(){['qtext','qoptions','qanswer','qexplain'].forEach(id=>$(id).value='');$('qmarks').value=1}$('clearQuestion').onclick=clearQ;
+function editQ(id){const q=questions.find(x=>x.id===id);if(!q)return;$('qtype').value=q.type;$('qtext').value=q.text;$('qoptions').value=(q.options||[]).join('\n');$('qmarks').value=q.marks;$('qanswer').value=q.answer||'';$('qexplain').value=q.explanation||'';questions=questions.filter(x=>x.id!==id);renderQuestions();window.scrollTo({top:0,behavior:'smooth'})}
+function addBank(id){const q=questions.find(x=>x.id===id);if(!q)return;bank.unshift({...q,bankId:uid(),...info(),createdAt:new Date().toISOString()});persist();renderBank();refresh();if(user)syncBankOne(bank[0])}
+function headerHTML(){const d=info();return `<h2>${esc(d.school||'School / Coaching Name')}</h2><h3>${esc(d.exam||'QUESTION PAPER')}</h3><div class="meta">${esc(d.board)} · ${esc(d.cls)} · ${esc(d.subject)}<br>${esc(d.language)} · Duration: ${esc(d.duration||'—')} · Full Marks: ${esc(d.fullmarks||total())}<br>Teacher: ${esc(d.teacher)}</div><hr>`}
+function preview(){if(!questions.length)return alert('Add questions first.');$('paperPreview').innerHTML=headerHTML()+questions.map((q,i)=>`<div class="pq"><span class="marks">[${esc(q.marks)}]</span><b>${i+1}.</b> ${esc(q.text)}${q.options?.length?`<div class="options">${q.options.map((o,j)=>`<span>(${String.fromCharCode(65+j)}) ${esc(o)}</span>`).join('')}</div>`:''}</div>`).join('');$('previewCard').classList.remove('hidden');$('previewCard').scrollIntoView({behavior:'smooth'})}
+$('previewBtn').onclick=preview;
+function printDoc(answer){preview();const content=answer?headerHTML()+questions.map((q,i)=>`<div class="pq"><b>${i+1}.</b> ${esc(q.text)}<div class="answer"><b>Answer:</b> ${esc(q.answer||'Not provided')}${q.explanation?`<br><b>Explanation:</b> ${esc(q.explanation)}`:''}</div></div>`).join(''):$('paperPreview').innerHTML;const w=window.open('','_blank');if(!w)return alert('Allow pop-ups and try again.');w.document.write(`<html><head><meta charset="utf-8"><title>PAPER PRO</title><style>body{font:15px/1.6 Arial,"Noto Sans Bengali",sans-serif;padding:20px;color:#111}h2,h3{text-align:center;margin:4px}.meta{text-align:center;font-size:13px;line-height:1.8}.pq{margin:14px 0;break-inside:avoid}.marks{float:right}.options{display:grid;grid-template-columns:1fr 1fr;margin:6px 0 0 25px}.answer{margin:5px 0 0 20px;font-size:13px}@page{margin:18mm}</style></head><body>${content}</body></html>`);w.document.close();setTimeout(()=>w.print(),500)}
+$('printQuestions').onclick=()=>printDoc(false);$('printAnswers').onclick=()=>printDoc(true);
+$('savePaper').onclick=async()=>{if(!questions.length)return alert('Add questions before saving.');const p={id:editingId||uid(),title:info().exam||'Untitled paper',...info(),questions:JSON.parse(JSON.stringify(questions)),updatedAt:new Date().toISOString()};const ix=papers.findIndex(x=>x.id===p.id);if(ix>=0)papers[ix]=p;else papers.unshift(p);if(!persist())return;refresh();if(user){const ok=await syncPaperOne(p);notify(ok?'Paper saved and synced to cloud.':'Saved locally; cloud sync failed.',''+(ok?'success':'error'))}else notify('Paper saved on this device. Sign in to sync it online.','success')};
+$('newPaper').onclick=()=>{if(questions.length&&!confirm('Start a new paper? Unsaved questions will be lost.'))return;questions=[];editingId=null;['school','exam','subject','chapter','duration','fullmarks'].forEach(id=>$(id).value='');$('teacher').value='MISBAHUL SAKLINE';$('previewCard').classList.add('hidden');renderQuestions()};
+function renderSaved(){const term=($('paperSearch').value||'').toLowerCase();const list=papers.filter(p=>JSON.stringify([p.exam,p.subject,p.cls,p.board]).toLowerCase().includes(term));$('savedList').innerHTML=list.length?list.map(p=>`<article class="item"><b>${esc(p.exam||'Untitled Paper')}</b><div class="muted">${esc(p.cls)} · ${esc(p.board)} · ${esc(p.subject)} · ${p.questions?.length||0} questions</div><div class="actions"><button class="btn small green" data-open="${esc(p.id)}">Open</button><button class="btn small light" data-copy="${esc(p.id)}">Duplicate</button><button class="btn small red" data-del="${esc(p.id)}">Delete</button></div></article>`).join(''):'<div class="empty">No saved papers.</div>'; $('savedList').querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openPaper(b.dataset.open));$('savedList').querySelectorAll('[data-copy]').forEach(b=>b.onclick=()=>duplicate(b.dataset.copy));$('savedList').querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>deletePaper(b.dataset.del))}
+function openPaper(id){const p=papers.find(x=>String(x.id)===String(id));if(!p)return;['school','exam','cls','board','subject','chapter','language','duration','fullmarks','teacher'].forEach(k=>{if($(k))$(k).value=p[k]??''});questions=JSON.parse(JSON.stringify(p.questions||[]));editingId=p.id;renderQuestions();go('builder')}
+function duplicate(id){const p=papers.find(x=>String(x.id)===String(id));if(!p)return;const cp=JSON.parse(JSON.stringify(p));cp.id=uid();cp.exam=(cp.exam||'Paper')+' - Copy';cp.updatedAt=new Date().toISOString();papers.unshift(cp);persist();renderSaved();refresh()}
+async function deletePaper(id){if(!confirm('Delete this paper?'))return;papers=papers.filter(x=>String(x.id)!==String(id));persist();if(user)await sb.from('question_papers').delete().eq('user_id',user.id).eq('app_paper_id',String(id));renderSaved();refresh()}
+$('paperSearch').oninput=renderSaved;
+function renderBank(){const t=($('bankSearch').value||'').toLowerCase(),cl=$('filterClass').value,bo=$('filterBoard').value;const list=bank.filter(q=>(!cl||q.cls===cl)&&(!bo||q.board===bo)&&(q.text+' '+q.subject+' '+q.chapter).toLowerCase().includes(t));$('bankList').innerHTML=list.length?list.map(q=>`<article class="item"><b>${esc(q.text)}</b><div class="muted">${esc(q.cls)} · ${esc(q.board)} · ${esc(q.subject)} · ${esc(q.chapter)}</div><div class="actions"><button class="btn small green" data-use="${esc(q.bankId)}">Add to Paper</button><button class="btn small red" data-bankdel="${esc(q.bankId)}">Delete</button></div></article>`).join(''):'<div class="empty">No questions found.</div>';$('bankList').querySelectorAll('[data-use]').forEach(b=>b.onclick=()=>{const q=bank.find(x=>String(x.bankId)===b.dataset.use);if(q){questions.push({...q,id:uid()});renderQuestions();go('builder')}});$('bankList').querySelectorAll('[data-bankdel]').forEach(b=>b.onclick=()=>deleteBank(b.dataset.bankdel))}
+$('bankSearch').oninput=renderBank;$('filterClass').onchange=renderBank;$('filterBoard').onchange=renderBank;
+async function deleteBank(id){if(!confirm('Delete this question?'))return;bank=bank.filter(x=>String(x.bankId)!==String(id));persist();if(user)await sb.from('question_bank').delete().eq('user_id',user.id).eq('app_question_id',String(id));renderBank();refresh()}
+function backup(){const blob=new Blob([JSON.stringify({app:'PAPER PRO',version:2,exportedAt:new Date().toISOString(),papers,bank},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='PAPER-PRO-BACKUP.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}$('exportBackup').onclick=backup;
+$('importBackup').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.papers)||!Array.isArray(d.bank))throw Error();if(!confirm('Replace local papers and question bank with this backup?'))return;papers=d.papers;bank=d.bank;persist();refresh();renderSaved();renderBank();alert('Backup restored.')}catch{alert('Invalid backup file.')}};r.readAsText(f);e.target.value=''};
+async function api(path,body){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json().catch(()=>({error:'Invalid server response'}));if(!r.ok)throw Error(d.error||'Request failed');return d}
+$('generateAI').onclick=async()=>{const topic=$('aiTopic').value.trim();if(!topic)return alert('Enter a chapter or topic.');const b=$('generateAI'),m=$('aiMessage');b.disabled=true;b.textContent='Generating…';m.classList.remove('hidden','error','success');m.textContent='AI is preparing questions…';try{const {data:{session}}=await sb?.auth.getSession()||{data:{session:null}};if(!session?.access_token)throw Error('AI ব্যবহার করতে আগে Teacher Login করতে হবে।');const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+session.access_token},body:JSON.stringify({topic,board:$('board').value,className:$('cls').value,subject:$('subject').value,language:$('language').value,count:Number($('aiCount').value),types:$('aiTypes').value.split(','),difficulty:$('aiDifficulty').value})});const d=await r.json();if(!r.ok)throw Error(d.error||'AI generation failed.');const made=(d.questions||[]).map(q=>({id:uid(),type:q.type||'Short Answer',text:q.text||'',options:Array.isArray(q.options)?q.options:[],marks:Number(q.marks)||1,answer:q.answer||'',explanation:q.explanation||''})).filter(q=>q.text);if(!made.length)throw Error('No usable questions returned.');questions.push(...made);renderQuestions();m.className='notice success';m.textContent=made.length+' questions added. Review every question and answer before using.';go('builder')}catch(e){m.className='notice error';m.textContent=e.message}finally{b.disabled=false;b.textContent='✦ Generate Questions'}};
+function accountUI(){ $('cloudBadge').textContent=user?'Cloud connected':'Local mode';$('userBadge').textContent=user?(user.email||'Teacher signed in'):'Not signed in';$('authForm').classList.toggle('hidden',!!user);$('signedIn').classList.toggle('hidden',!user);if(user)$('signedEmail').textContent='Signed in as '+user.email;}
+$('signUp').onclick=async()=>{if(!sb)return;const email=$('authEmail').value.trim(),password=$('authPassword').value,name=$('authName').value.trim();if(!email||password.length<8)return notify('Enter a valid email and password of at least 8 characters.','error');try{const {data,error}=await sb.auth.signUp({email,password,options:{data:{full_name:name}}});if(error)throw error;notify(data.session?'Account created and signed in.':'Account created. Check your email to confirm, then sign in.','success')}catch(e){notify(e.message,'error')}};
+$('signIn').onclick=async()=>{if(!sb)return;try{const {error}=await sb.auth.signInWithPassword({email:$('authEmail').value.trim(),password:$('authPassword').value});if(error)throw error;notify('Signed in. Syncing your data…','success')}catch(e){notify(e.message,'error')}};
+$('signOut').onclick=async()=>{if(sb)await sb.auth.signOut()};$('syncNow').onclick=syncAll;
+async function syncPaperOne(p){if(!sb||!user)return false;const row={user_id:user.id,app_paper_id:String(p.id),title:p.exam||'Untitled paper',school_name:p.school||'',board:p.board||'WBBSE',class_level:parseInt((p.cls||'Class 5').replace(/\D/g,''),10)||5,subject:p.subject||'',exam_type:p.exam||'Exam',language:p.language||'English',duration:p.duration||'1 Hour',total_marks:total(p.questions||[]),paper_json:p,updated_at:new Date().toISOString()};const {error}=await sb.from('question_papers').upsert(row,{onConflict:'user_id,app_paper_id'});if(error){console.error(error);return false}return true}
+async function syncBankOne(q){if(!sb||!user)return false;const row={user_id:user.id,app_question_id:String(q.bankId),class_level:parseInt((q.cls||'Class 5').replace(/\D/g,''),10)||5,board:q.board||'WBBSE',subject:q.subject||'',chapter:q.chapter||'',topic:q.chapter||'',language:q.language||'বাংলা',question_type:q.type||'Short Answer',question_text:q.text,options:q.options||[],marks:Number(q.marks)||1,answer_text:q.answer||'',explanation:q.explanation||'',difficulty:q.difficulty||'Moderate',question_json:q,updated_at:new Date().toISOString()};const {error}=await sb.from('question_bank').upsert(row,{onConflict:'user_id,app_question_id'});if(error){console.error(error);return false}return true}
+async function syncAll(){if(!sb||!user)return notify('Configure Supabase and sign in first.','error');notify('Syncing cloud data…','');try{const [pr,br]=await Promise.all([sb.from('question_papers').select('paper_json').eq('user_id',user.id),sb.from('question_bank').select('question_json').eq('user_id',user.id)]);if(pr.error)throw pr.error;if(br.error)throw br.error;const remoteP=pr.data.map(x=>x.paper_json).filter(Boolean),remoteB=br.data.map(x=>x.question_json).filter(Boolean);const mergedP=[...remoteP,...papers.filter(p=>!remoteP.some(r=>String(r.id)===String(p.id)))];const mergedB=[...remoteB,...bank.filter(q=>!remoteB.some(r=>String(r.bankId)===String(q.bankId)))];papers=mergedP;bank=mergedB;persist();for(const p of papers)await syncPaperOne(p);for(const q of bank)await syncBankOne(q);renderSaved();renderBank();refresh();notify('Cloud sync completed. Papers and question bank are synced.','success')}catch(e){notify('Cloud sync failed: '+e.message,'error')}}
+async function onUser(u){user=u;accountUI();if(user)await syncAll();else notify(supabaseReady?'Signed out. Local mode is available.':'Supabase is not configured yet. Follow README_BN.md setup steps.','')}
+if(!supabaseReady){$('accountStatus').textContent='Supabase not configured. Add your Supabase URL and anon key in config.js, then redeploy.'}else{sb.auth.getSession().then(({data})=>onUser(data.session?.user||null));sb.auth.onAuthStateChange((_event,session)=>{setTimeout(()=>onUser(session?.user||null),0)})}
+accountUI();renderQuestions();renderSaved();renderBank();refresh();
 </script>
-</body>
-  </html>q
+</body></html>

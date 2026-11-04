@@ -1,6 +1,6 @@
-// Supabase project settings. The anon/publishable key is intended for browser use.
-// NEVER put your Supabase service_role key or OpenAI API key in this file.
+// Supabase project settings
+// Never put your service_role key or OpenAI API key here.
 window.PAPER_PRO_CONFIG = {
-  supabaseUrl: "YOUR_SUPABASE_PROJECT_URL",
-  supabaseAnonKey: "YOUR_SUPABASE_ANON_OR_PUBLISHABLE_KEY"
+  supabaseUrl: "https://fkknwnxmoihlzabreozm.supabase.co",
+  supabaseAnonKey: "sb_publishable_Z5pQB7eQ_kB8gV38KBIlCQ__Pz7S1A_"
 };
